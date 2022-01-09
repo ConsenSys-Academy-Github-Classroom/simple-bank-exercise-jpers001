@@ -97,7 +97,7 @@ contract SimpleBank {
 
       // 1. Use a require expression to guard/ensure sender has enough funds
       require(balances[msg.sender] >= withdrawAmount);
-      balances[msg.sender] = withdrawAmount;
+      balances[msg.sender] -= withdrawAmount;
       // 2. Transfer Eth to the sender and decrement the withdrawal amount from
       //    sender's balance
       msg.sender.transfer(msg.value);
